@@ -42,16 +42,13 @@ Take the training on `obj1` as an example.
 
 ### Testing on Linemod
 
-We provide the pretrained models of objects on RTL, which can be found at [here](https://ussteducn-my.sharepoint.com/:f:/g/personal/wuchenrui_usst_edu_cn/EuhOxm1AAOhAh108zNxiZ7UBab41UGRtjX6Z1jw0xQcGEg?e=US6rWq). 你可以使用该预训练模型复现psgmn在RTL上的得分
-
 Take the testing on `obj1` as an example.
 
 
-1. Download the pretrained model of `obj1` and put it to `$ROOT/model/obj1/150.pth`.
+1. Train model of `obj1` and put it to `$ROOT/model/obj1/150.pth`.
 2. Test:
     ```
     python main_psgmn.py --class_type obj1 --eval True
-    python main_psgmn.py --class_type obj1 --occ True --eval True
     ```
 
 # References

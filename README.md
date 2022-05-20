@@ -74,7 +74,7 @@ render_data : 用来生成渲染数据集的脚本，内含readme.md
 
 [1] psgmn
 
-[] [psgmn](https://github.com/Ray0089/PSGMN)
+[2] [psgmn](https://github.com/Ray0089/PSGMN)
 
 [3] surfemb
 
