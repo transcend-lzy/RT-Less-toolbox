@@ -46,11 +46,11 @@ convex_hull_3d  + getDiameter.py :
 - convex_hull_3d  : Read ply file to generate minimum 3D convex hull
 - getDiameter.py ：According to the vertex set of the smallest 3D convex hull, the diameter of the object is calculated, that is, the distance between the two farthest points on the surface of the object
 
-overlyRender : Render the ground-truth of the RTL render dataset and overly it on the original image to obtain the image shown in Fig. 1.
+overlyRender : Render the ground-truth of the RTL render dataset and overly it on the original image to obtain the image as shown below.
 
-overlayTrue：Render the ground-truth of the RTL true dataset and overly it on the original image to obtain the image shown in Fig. 1.
+overlayTrue：Render the ground-truth of the RTL true dataset and overly it on the original image to obtain the image as shown below.
 
-overlayYours: Provide images and ground-truth and CADmodels of yours，image with the effect shown in Fig. 1 is obtained
+overlayYours: Provide images and ground-truth and CADmodels of yours，you can get the image overlaied as shown below
 
 ![1](./assest/overlay.png)
 
@@ -64,8 +64,8 @@ randomBackground.py: Randomly replace the background (SUN dataset is used)
 
 baseline_methods
 
-- psgmn : baseline method PSGMN
-- surfemb : baseline method SurfEmb
+- PSGMN: baseline method PSGMN
+- SurfEmb: baseline method SurfEmb
 
 render_data : Script to generate rendering dataset.
 
