@@ -32,43 +32,44 @@ PyOpenGL==3.1.5
 
 dataset_rtl.py + data_utils.py: 
 
--  读取图片、ground-truth（yaml格式）、bounding-box(yaml格式)
-- 能够实现dataset的功能（返回一份训练或者测试数据）
+-  import images、ground-truth（yaml file）、bounding-box(yaml file)
+- Can realize the function of dataset（Return a training or test data）
 
 eval_rtl.py :
 
-- 读取直径（npy文件），并根据以直径的10%为threshold计算add（-s）
-- 计算平均旋转和平移误差
-- 计算projection_2d误差
-- 计算5°5cm误差
+- Read the diameter (npy file) and calculate ADDS based on the threshold of 10% of the diameter
+- Calculate the average rotation and translation errors
+- Calculate projection_2d error
 
 convex_hull_3d  + getDiameter.py :
 
-- convex_hull_3d  : 读取ply文件生成最小凸包
-- getDiameter.py ：根据最小凸包的顶点集合，计算得到物体直径，即物体表面两个最远点的距离
+- convex_hull_3d  : Read ply file to generate minimum 3D convex hull
+- getDiameter.py ：According to the vertex set of the smallest 3D convex hull, the diameter of the object is calculated, that is, the distance between the two farthest points on the surface of the object
 
-overlyRender : 将rtl的render数据集的gt渲染出来叠加到原始图片上，即可获得如图1所示的效果
+overlyRender : Render the ground-truth of the RTL render dataset and overly it on the original image to obtain the image shown in Fig. 1.
+
+overlayTrue：Render the ground-truth of the RTL true dataset and overly it on the original image to obtain the image shown in Fig. 1.
+
+overlayYours: Provide images and ground-truth and CADmodels of yours，image with the effect shown in Fig. 1 is obtained
 
 ![1](./assest/overlay.png)
 
-​							                                                       图1
+​							                                                                       Figure1 
 
-overlayTrue：将rtl的真实数据集的ground-truth渲染出来叠加到原始图片上，可以获得如图1所示的效果
+read_stl.py : Read CAD models in "stl" format
 
-overlayYours：按照要求提供图像和ground-truth以及模型的，得到如图1（b）所示效果的图像
+overlayUtils.py : The script is depended on by overlyRender, overlayTrue, overlayYours.
 
-read_stl.py : 读取stl文件
-
-overlayUtils.py : overlyRender, overlayTrue, overlayYours等脚本依赖的脚本
-
-randomBackground.py: 随机替换背景，需要提前下载sun数据集
+randomBackground.py: Randomly replace the background (SUN dataset is used)
 
 baseline_methods
 
-- psgmn : 基线方法psgmn，内含readme.md
-- surfemb : 基线方法surfemb, 内涵readme.md
+- psgmn : baseline method PSGMN
+- surfemb : baseline method SurfEmb
 
-render_data : 用来生成渲染数据集的脚本，内含readme.md
+render_data : Script to generate rendering dataset.
+
+to_BOP:  It is used to convert RTL data to BOP format data and download it together with the picture
 
 ## References
 
