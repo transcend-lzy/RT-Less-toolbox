@@ -4,29 +4,11 @@ RTL is a new public dataset of reflective texture-less metal parts. The dataset 
 
 ## Requirements
 
-Python >= 3.6
+```shell
+pip install -r requirements.txt
+```
 
-opencv-python == 4.4.0.44
 
-numpy == 1.19.1
-
-ruamel.yaml == 0.16.12
-
-matplotlib == 3.1.2
-
-tqdm == 4.64.0
-
-PIL == 5.2.0
-
-torch>=1.7.1
-
-scipy == 1.5.2
-
-open3d == 0.12.0
-
-pygame == 1.9.6
-
-PyOpenGL==3.1.5
 
 ## Scripts
 
@@ -54,11 +36,11 @@ overlayYours: Provide images and ground-truth and CADmodels of yours，you can g
 
 ![1](./assest/overlay.png)
 
-​							                                                                       Figure1 
+
 
 read_stl.py : Read CAD models in "stl" format
 
-overlayUtils.py : The script is depended on by overlyRender, overlayTrue, overlayYours.
+overlayUtils.py : The script is depended on by overlyRender,  overlayTrue,  overlayYours.
 
 randomBackground.py: Randomly replace the background (SUN dataset is used)
 
