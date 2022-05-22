@@ -55,11 +55,11 @@ to_BOP:  It is used to convert RTL data to BOP format data and download it toget
 
 ## References
 
-[1] psgmn
+[1] C. Wu, L. Chen, Z. He, and J. Jiang, “Pseudo-siamese graph matching network for textureless objects’ 6D pose estimation,” *IEEE Trans. Ind. Electron.,* vol. 69, no. 3, pp. 2718–2727, Mar. 2022.
 
 [2] [psgmn](https://github.com/Ray0089/PSGMN)
 
-[3] surfemb
+[3] R. L. Haugaard and A. G. Buch, “SurfEmb: Dense and Continuous Correspondence Distributions for Object Pose Estimation with Learnt Surface Embeddings,” *arXiv:2111.13489 [cs]*, Apr. 2022, Accessed: Apr. 06, 2022. [Online]. Available: http://arxiv.org/abs/2111.13489
 
 [4] [surfemb](https://github.com/rasmushaugaard/surfemb)
 
