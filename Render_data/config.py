@@ -8,7 +8,7 @@ cfg = EasyDict()
 """
 Path settings
 """
-cfg.ROOT_DIR = '/home/reflex/Render_data'
+cfg.ROOT_DIR = '/home/lqz/chaoyue/Render_data'
 cfg.DATA_DIR = os.path.join(cfg.ROOT_DIR, 'data')
 cfg.MODEL_DIR = os.path.join(cfg.DATA_DIR, 'model')
 cfg.REC_DIR = os.path.join(cfg.DATA_DIR, 'record')
@@ -29,17 +29,17 @@ sys.path.extend([".", ".."])
 """
 Data settings
 """
+cfg.render_obj_ids = [16]
 cfg.LINEMOD = os.path.join(cfg.DATA_DIR, 'metal')
 cfg.LINEMOD_ORIG = os.path.join(cfg.DATA_DIR, 'metal')
 cfg.OCCLUSION_LINEMOD = os.path.join(cfg.DATA_DIR, 'OCCLUSION_LINEMOD')
-#cfg.YCB = os.path.join(cfg.DATA_DIR, 'YCB')
 cfg.SUN = os.path.join(cfg.DATA_DIR, "SUN")
 
 """
 Rendering setting
 """
-cfg.BLENDER_PATH = '/home/reflex/软件/blender-2.79-linux-glibc219-x86_64/blender'
-cfg.NUM_SYN = 6600  #渲染的数量
+cfg.BLENDER_PATH = '/home/lqz/chaoyue/blender-2.79-linux-glibc219-x86_64/blender'
+cfg.NUM_SYN = 60  #渲染的数量
 cfg.WIDTH = 640
 cfg.HEIGHT = 480
 cfg.low_azi = 0

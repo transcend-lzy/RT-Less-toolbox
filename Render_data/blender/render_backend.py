@@ -7,6 +7,7 @@ import sys
 from transforms3d.euler import euler2mat
 import itertools
 import glob
+import os.path as osp
 
 UTILS_DIR = os.path.dirname(os.path.abspath(__file__))
 LIB_DIR = os.path.dirname(UTILS_DIR)
@@ -429,8 +430,8 @@ def batch_render_with_linemod(args, camera):
     for i in range(begin_num_imgs, cfg.NUM_SYN):
         # overlay an background image and place the object
         #这里我把背景变成黑色了
-        img_name = os.path.basename("/home/reflex/Render_data/black.png")
-        bpy.data.images.load("/home/reflex/Render_data/black.png")
+        img_name = os.path.basename(osp.join(cfg.ROOT_DIR, 'black.png'))
+        bpy.data.images.load(osp.join(cfg.ROOT_DIR, 'black.png'))
         bpy.data.worlds['World'].node_tree.nodes['Environment Texture'].image = bpy.data.images[img_name]
         pose = poses[i]
         # x, y = np.random.uniform(-0.15, 0.15, size=2)

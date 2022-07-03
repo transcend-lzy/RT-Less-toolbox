@@ -73,7 +73,7 @@ class DataStatistics(object):
 
         eulers = []
         translations = []
-        pose_path="/home/reflex/Render_data/data/metal/test"
+        pose_path="/home/lqz/chaoyue/Render_data/data/metal/test"
         gt_name=os.listdir(pose_path)
         #gt = yaml.load(open(os.path.join(pose_path, 'gt2.yml'), 'r'))
         for name in gt_name:
@@ -296,59 +296,4 @@ class Renderer(object):
 
         with Pool(processes=2) as pool:
             pool.map(render, objects)
-
-
-class YCBRenderer(Renderer):
-    def __init__(self, class_type):
-        super(YCBRenderer, self).__init__(class_type)
-        self.output_dir_path = os.path.join(cfg.YCB, 'renders/{}').format(class_type)
-        self.blank_blend = os.path.join(cfg.DATA_DIR, 'blank.blend')
-        self.obj_path = os.path.join(cfg.YCB, 'models', class_type, 'textured.obj')
-        self.class_types = np.loadtxt(os.path.join(cfg.YCB, 'image_sets/classes.txt'), dtype=np.str)
-        self.class_types = np.insert(self.class_types, 0, 'background')
-
-    def sample_poses(self):
-        statistician = YCBDataStatistics(self.class_type)
-        statistician.sample_poses()
-
-    @staticmethod
-    def multi_thread_render():
-        objects = ['003_cracker_box', '004_sugar_box', '005_tomato_soup_can', '006_mustard_bottle']
-
-        def render(class_type):
-            renderer = YCBRenderer(class_type)
-            renderer.run()
-
-        with Pool(processes=2) as pool:
-            pool.map(render, objects)
-
-
-class MultiRenderer(Renderer):
-    class_types = ['ape', 'benchvise', 'can', 'cat', 'driller', 'duck', 'glue',
-                   'holepuncher', 'iron', 'lamp', 'phone', 'cam', 'eggbox']
-
-    def __init__(self):
-        super(MultiRenderer, self).__init__('')
-        self.poses_path = os.path.join(cfg.DATA_DIR, '{}_poses.npy')
-        self.output_dir_path = '/home/pengsida/Datasets/LINEMOD/renders/all_objects'
-
-    def sample_poses(self):
-        for class_type in self.class_types:
-            statistician = DataStatistics(class_type)
-            statistician.sample_poses()
-
-    def run(self):
-        """ Render images
-        1. prepare background images
-        2. sample poses from the pose distribution of training data
-        3. call the blender to render images
-        """
-        self.get_bg_imgs()
-        self.sample_poses()
-
-        os.system('{} {} --background --python {} -- --input {} --output_dir {} --use_cycles True --bg_imgs {} --poses_path {}'.
-                  format(self.blender_path, self.blank_blend, self.py_path, self.obj_path, self.output_dir_path, self.bg_imgs_path, self.poses_path))
-        depth_paths = glob.glob(os.path.join(self.output_dir_path, '*.exr'))
-        for depth_path in depth_paths:
-            self.exr_to_png(depth_path)
 

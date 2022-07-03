@@ -2,7 +2,9 @@
 
 ### Prepare the dataset
 
-Download the RTL, which can be found at [here](http://www.zju-rtl.cn/RTL/).
+Download the LINEMOD, which can be found at [here](https://zjueducn-my.sharepoint.com/:u:/g/personal/pengsida_zju_edu_cn/EXK2K0B-QrNPi8MYLDFHdB8BQm9cWTxRGV9dQgauczkVYQ?e=beftUz).
+
+Download the LINEMOD_ORIG, which can be found at [here](https://zjueducn-my.sharepoint.com/:u:/g/personal/pengsida_zju_edu_cn/EaoGIPguY3FAgrFKKhi32fcB_nrMcNRm8jVCZQd7G_-Wbg?e=ig4aHk).
 
 Download the SUN397
 
@@ -15,7 +17,8 @@ wget http://groups.csail.mit.edu/vision/SUN/releases/SUN2012pascalformat.tar.gz
 Commands
 
 ```
-ln -s path/to/RTL ./data/LINEMOD
+ln -s path/to/LINEMOD ./data/LINEMOD
+ln -s path/to/LINEMOD_ORIG ./data/LINEMOD_ORIG
 ln -s path/to/SUN2012 ./data/SUN
 ```
 
@@ -43,5 +46,9 @@ python run.py --type fuse
 
 Blender rendering
 
-![blender](./assets/rtl.png)
+![blender](./assets/blender.png)
+
+Fusion
+
+![fusion](./assets/fuse.png)
 
