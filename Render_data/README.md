@@ -1,54 +1,32 @@
-## Generating synthetic data for PVNet
+## Generating synthetic data for RTL
 
-### Prepare the dataset
+### Prepare the data for blender
 
-Download the LINEMOD, which can be found at [here](https://zjueducn-my.sharepoint.com/:u:/g/personal/pengsida_zju_edu_cn/EXK2K0B-QrNPi8MYLDFHdB8BQm9cWTxRGV9dQgauczkVYQ?e=beftUz).
-
-Download the LINEMOD_ORIG, which can be found at [here](https://zjueducn-my.sharepoint.com/:u:/g/personal/pengsida_zju_edu_cn/EaoGIPguY3FAgrFKKhi32fcB_nrMcNRm8jVCZQd7G_-Wbg?e=ig4aHk).
-
-Download the SUN397
+Download the data, which can be found at [here](https://1drv.ms/u/s!AiwRMXEmaB9wiTr1qrZ7ZDSS6u5-?e=F0jYco).  
 
 ```
-wget http://groups.csail.mit.edu/vision/SUN/releases/SUN2012pascalformat.tar.gz
+mv /path/for/data  /Render_data
 ```
 
-### Create the soft link
-
-Commands
-
-```
-ln -s path/to/LINEMOD ./data/LINEMOD
-ln -s path/to/LINEMOD_ORIG ./data/LINEMOD_ORIG
-ln -s path/to/SUN2012 ./data/SUN
-```
-
-### Configure the blender
+### Configure
 
 Download blender-2.79a, and revise the `cfg.BLENDER_PATH` in the `config.py`.
+
+revise the `cfg.ROOT_DIR`  in the `config.py`.
 
 ### Run
 
 **All the Commands must be carried out in the ROOT directory.**
 
-10000 images from blender rendering
+images from blender rendering
 
 ```
-python run.py --type rendering
-```
-
-10000 images from fusion
-
-```
-python run.py --type fuse
+python run.py
 ```
 
 ### Examples
 
 Blender rendering
 
-![blender](./assets/blender.png)
-
-Fusion
-
-![fusion](./assets/fuse.png)
+![blender](README.assets/rtl-16568636709302.png)
 
